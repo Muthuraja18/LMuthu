@@ -1,7 +1,7 @@
 ---
 title: Restaurant Management System
 publishDate: 2023-02-03 00:00:00
-img: /assets/restaurant-management.jpg
+img: /assets/12.jpg
 img_alt: An illustration of a modern restaurant management system interface
 description: |
   A comprehensive project on developing a Restaurant Management System to streamline operations, enhance customer service, and optimize resources.
@@ -47,19 +47,6 @@ tags:
 
             <h2>Implementation</h2>
             <pre><code class="language-python">
-# Import necessary libraries
-from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///restaurant.db'
-db = SQLAlchemy(app)
-
-class Order(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    table_number = db.Column(db.Integer, nullable=False)
-    items = db.Column(db.String(200), nullable=False)
-    status = db.Column(db.String(20), nullable=False)
 
 @app.route('/')
 def index():
