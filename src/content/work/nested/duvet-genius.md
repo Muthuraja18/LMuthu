@@ -1,7 +1,7 @@
 ---
 title: Mobile Tracker
 publishDate: 2024-10-11 00:00:00
-img: /assets/stock-3.jpg
+img: /assets/11.jpg
 img_alt: Illustration of a mobile tracker with IoT devices, chips, and sensors
 description: |
   A comprehensive project on Mobile Tracker using IoT devices, chips, and sensors.
