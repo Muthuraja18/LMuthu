@@ -1,0 +1,63 @@
+{
+  "name": "LMuthu",
+  "bucket": "LMuthu",
+  "preset": "astro",
+  "env": "production",
+  "prefix": "20241130165723",
+  "not-first-run": true,
+  "function": {
+    "id": 33058,
+    "name": "__DEFAULT__",
+    "file": ".edge/worker.js",
+    "args": "azion/args.json",
+    "instance-id": 31795,
+    "instance-name": "__DEFAULT__",
+    "cache-id": 0
+  },
+  "application": {
+    "id": 1732981200,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 1732986917,
+    "name": "LMuthu",
+    "domain_name": "tmq75a86oj.map.azionedge.net",
+    "url": "https://tmq75a86oj.map.azionedge.net"
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": [
+    {
+      "origin-id": 169755,
+      "origin-key": "4c4f81f7-0b98-4daf-bd03-e913f272e357",
+      "name": "origin-storage-default"
+    }
+  ],
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 328967,
+        "name": "Set Storage Origin for All Requests",
+        "phase": "request"
+      },
+      {
+        "id": 328968,
+        "name": "Deliver Static Assets",
+        "phase": "request"
+      },
+      {
+        "id": 328969,
+        "name": "Redirect to index.html",
+        "phase": "request"
+      },
+      {
+        "id": 328970,
+        "name": "Redirect to index.html for Subpaths",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": []
+}
