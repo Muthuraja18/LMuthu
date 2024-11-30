@@ -1,23 +1,151 @@
 ---
-title: Bloom Box
-publishDate: 2019-12-01 00:00:00
-img: /assets/stock-2.jpg
-img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
+title: Restaurant Management System
+publishDate: 2023-02-03 00:00:00
+img: /assets/restaurant-management.jpg
+img_alt: An illustration of a modern restaurant management system interface
 description: |
-  We paired with a cutting-edge music API and a team of horticulturalists
-  to build AI-generated playlists that maximize houseplant health.
+  A comprehensive project on developing a Restaurant Management System to streamline operations, enhance customer service, and optimize resources.
 tags:
-  - Dev
-  - Branding
-  - Backend
+  - Development
+  - Software
+  - Management
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+<div class="project-container">
+    <header class="project-header">
+        <h1>Restaurant Management System</h1>
+        <p><strong>Published Date:</strong> February 3, 2023</p>
+        <img class="project-image" src="/assets/12.jpg" alt="An illustration of a modern restaurant management system interface" />
+    </header>
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+    <div class="project-content">
+        <section class="project-description">
+            <p>
+                This project focuses on developing a Restaurant Management System to streamline operations, enhance customer service, and optimize resources. The system integrates various modules, including order management, inventory control, and employee scheduling, to provide a comprehensive solution for restaurant management.
+            </p>
+        </section>
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+        <section class="project-details">
+            <h2>Overview</h2>
+            <p>
+                The Restaurant Management System project aims to create an efficient and user-friendly platform for managing restaurant operations. By integrating various functionalities, the system helps restaurant owners and managers to monitor and control different aspects of their business seamlessly.
+            </p>
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <h2>Key Features</h2>
+            <ul>
+                <li>Order Management: Streamlines the process of taking and managing customer orders.</li>
+                <li>Inventory Control: Monitors and manages inventory levels to prevent shortages and overstocking.</li>
+                <li>Employee Scheduling: Simplifies the process of scheduling staff shifts and tracking attendance.</li>
+                <li>Customer Management: Maintains customer profiles and tracks their preferences and feedback.</li>
+                <li>Reporting and Analytics: Generates detailed reports and analytics to help managers make data-driven decisions.</li>
+            </ul>
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+            <h2>How It Works</h2>
+            <p>
+                The Restaurant Management System uses a centralized database to store and manage data from various modules. The system interfaces with multiple devices, including POS terminals, tablets, and mobile phones, to provide real-time access to information and functionalities. The intuitive user interface ensures that staff can quickly and efficiently perform their tasks.
+            </p>
+
+            <h2>Implementation</h2>
+            <pre><code class="language-python">
+# Import necessary libraries
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///restaurant.db'
+db = SQLAlchemy(app)
+
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    table_number = db.Column(db.Integer, nullable=False)
+    items = db.Column(db.String(200), nullable=False)
+    status = db.Column(db.String(20), nullable=False)
+
+@app.route('/')
+def index():
+    orders = Order.query.all()
+    return render_template('index.html', orders=orders)
+
+@app.route('/add_order', methods=['POST'])
+def add_order():
+    table_number = request.form.get('table_number')
+    items = request.form.get('items')
+    status = request.form.get('status')
+    new_order = Order(table_number=table_number, items=items, status=status)
+    db.session.add(new_order)
+    db.session.commit()
+    return redirect(url_for('index'))
+
+if __name__ == "__main__":
+    app.run(debug=True)
+            </code></pre>
+        </section>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #000000, #222222);
+        background-size: 400% 400%;
+        animation: gradientBackground 15s ease infinite;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    @keyframes gradientBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .project-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .project-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .project-image {
+        width: 100%;
+        border-radius: 1rem;
+        animation: fadeInScale 2s ease-in-out;
+    }
+
+    .project-content {
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInScale {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
