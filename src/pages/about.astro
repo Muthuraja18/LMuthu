@@ -5,116 +5,217 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="About | Muthuraja" description="About Jeanine White Lorem Ipsum">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/muthu.jpg"
-					alt="Muthuraja at work with a colleague"
-				/>
-			</Hero>
+<BaseLayout title="About | Muthuraja" description="Learn more about Muthuraja and his background">
+    <div class="stack gap-20 animated-container">
+        <main class="wrapper about">
+            <Hero
+                title="About"
+                tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+            >
+                <img
+                    width="1553"
+                    height="873"
+                    src="/assets/muthu.jpg"
+                    alt="Muthuraja at work with a colleague"
+                    class="animated-img"
+                />
+            </Hero>
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
-		</main>
+            <section class="animated-section">
+                <h2 class="section-title">Background</h2>
+                <div class="content">
+                    <p>
+                        I am currently a 3rd-year student at Sethu Institute of Technology, pursuing a degree in Information Technology with a CGPA of 8.6. My academic journey has been marked by consistent excellence:
+                    </p>
+                    <ul>
+                        <li>10th Grade: 97%</li>
+                        <li>12th Grade: 77%</li>
+                    </ul>
+                </div>
+            </section>
 
-		<ContactCTA />
-	</div>
+            <section class="animated-section">
+                <h2 class="section-title">Projects</h2>
+                <div class="content">
+                    <h3>1. Mobile Tracker</h3>
+                    <p>
+                        Developed a real-time mobile tracking system utilizing IoT devices, GPS chips, and various sensors to provide accurate location tracking.
+                    </p>
+                    <h3>2. Smart Vehicle</h3>
+                    <p>
+                        Created a smart vehicle prototype integrating various sensors and automation technologies to enhance safety and efficiency.
+                    </p>
+                </div>
+            </section>
+
+            <section class="animated-section">
+                <h2 class="section-title">Internship</h2>
+                <div class="content">
+                    <p>
+                        Currently pursuing a 3-month internship at Infosys, where I am gaining practical experience and enhancing my technical skills.
+                    </p>
+                </div>
+            </section>
+
+            <section class="animated-section">
+                <h2 class="section-title">Achievements</h2>
+                <div class="content">
+                    <p>
+                        Participated in MSME (Micro, Small, and Medium Enterprises) initiatives, contributing to innovative solutions and entrepreneurship development.
+                    </p>
+                </div>
+            </section>
+
+            <section class="animated-section">
+                <h2 class="section-title">Extracurricular Activities</h2>
+                <div class="content">
+                    <p>
+                        Cricketer: Active participant in college cricket tournaments.
+                    </p>
+                    <p>
+                        Favourite Sportsman: Virat Kohli, whose dedication and sportsmanship inspire me.
+                    </p>
+                </div>
+            </section>
+
+            <section class="animated-section">
+                <h2 class="section-title">Skills and Interests</h2>
+                <div class="content">
+                    <p>
+                        <strong>Programming Languages:</strong> Proficient in C, C++, and Python.
+                    </p>
+                    <p>
+                        <strong>Domains of Interest:</strong> 
+                        <ol>
+                            <li>Artificial Intelligence Development</li>
+                            <li>Full Stack Development</li>
+                        </ol>
+                    </p>
+                    <p>
+                        <strong>Leadership:</strong> Demonstrated leadership skills by leading various team projects and motivating peers to achieve collective goals.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <ContactCTA class="animated-contact" />
+    </div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+    body {
+        background: linear-gradient(135deg, #000000, #222222);
+        background-size: 400% 400%;
+        animation: gradientBackground 15s ease infinite;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+    @keyframes gradientBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+    .animated-container {
+        animation: containerAnimation 1.5s ease-in-out;
+    }
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+    @keyframes containerAnimation {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-	.content {
-		grid-column: 2 / 4;
-	}
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+    .animated-img {
+        margin-top: 1.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-md);
+        animation: fadeInScale 2s ease-in-out;
+    }
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+    @keyframes fadeInScale {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: var(--gray-200);
+    }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+    .animated-section {
+        animation: fadeIn 1.5s ease-in-out;
+    }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .section-title {
+        grid-column-start: 1;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
+
+    .content {
+        grid-column: 2 / 4;
+    }
+
+    .content a {
+        text-decoration: 1px solid underline transparent;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--theme-transition);
+    }
+
+    .content a:hover,
+    .content a:focus {
+        text-decoration-color: currentColor;
+    }
+
+    @media (min-width: 50em) {
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 60% 1fr;
+        }
+
+        .about > :global(:first-child) {
+            grid-column-start: 2;
+        }
+
+        section {
+            display: contents;
+            font-size: var(--text-lg);
+        }
+    }
 </style>
